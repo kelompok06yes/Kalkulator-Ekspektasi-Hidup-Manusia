@@ -16,7 +16,7 @@ def create_excel_history(
     ):
     # Load the workbook (if it exists) or create a new one
     try:
-        workbook = openpyxl.load_workbook("life_expectancy_history.xlsx")
+        workbook = openpyxl.load_workbook("Kalkulator-Ekspektasi-Hidup-Manusia/life_expectancy_history.xlsx")
         sheet = workbook.active
     except FileNotFoundError:
         workbook = openpyxl.Workbook()
@@ -83,11 +83,11 @@ def create_excel_history(
         sheet.column_dimensions[column_letter].auto_size = True
 
     # Save the workbook
-    workbook.save("life_expectancy_history.xlsx")
+    workbook.save("Kalkulator-Ekspektasi-Hidup-Manusia/life_expectancy_history.xlsx")
 
 def display_history(name=None):
     # Load the workbook
-    workbook = openpyxl.load_workbook("life_expectancy_history.xlsx")
+    workbook = openpyxl.load_workbook("Kalkulator-Ekspektasi-Hidup-Manusia/life_expectancy_history.xlsx")
     sheet = workbook.active
 
     # Read data from the worksheet
