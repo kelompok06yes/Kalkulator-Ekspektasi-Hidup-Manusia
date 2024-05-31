@@ -4,7 +4,7 @@ def index_bmi (tinggi_badan, berat_badan) :
     return bmi
 
 def kategori_bmi (gender, bmi) :
-    if gender == 1 :
+    if gender == 'Laki-Laki' :
         ahh = 73
         if bmi < 17 :
             ahh -= 4
@@ -12,14 +12,11 @@ def kategori_bmi (gender, bmi) :
         elif bmi >= 17 and bmi <= 24.9 :
             ahh -= 0
             ket = 'Normal'
-        elif bmi >= 25 and bmi <= 29.9 :
+        elif bmi >= 25 :
             ahh -= -4
             ket = 'Kegemukan'
-        elif bmi >= 30 :
-            ahh -= -8
-            ket = 'Obesitas'
         return ahh, ket
-    elif gender == 2 :
+    elif gender == 'Perempuan' :
         ahh = 78
         if bmi < 17 :
             ahh -= 4
@@ -27,46 +24,43 @@ def kategori_bmi (gender, bmi) :
         elif bmi >= 17 and bmi <= 24.9 :
             ahh -= 0
             ket = 'Normal'
-        elif bmi >= 25 and bmi <= 29.9 :
+        elif bmi >= 25 :
             ahh -= -4
             ket = 'Kegemukan'
-        elif bmi >= 30 :
-            ahh -= -8
-            ket = 'Obesitas'
         return ahh, ket
     else :
         return 'Error'
     
 def kategori_pola_makan (pola_makan, ahh) :
-    if pola_makan == 1 :
-        ahh = ahh + 14
+    if pola_makan == 'Sehat' :
+        ahh = ahh + 10
     else :
         ahh = ahh
     return ahh
 
 def kategori_perokok (perokok, ahh) :
-    if perokok == 1 :
-        ahh = ahh - 7
+    if perokok == 'Ya' :
+        ahh = ahh - 10
     else :
         ahh = ahh
     return ahh
 
 def kategori_pengonsumsi_alkohol (alkohol, ahh) :
-    if alkohol == 1 :
+    if alkohol == 'Ringan' :
         ahh = ahh - 2
-    elif alkohol == 2 :
-        ahh = ahh - 4
-    elif alkohol == 3 :
+    elif alkohol == 'Sedang' :
         ahh = ahh - 6
-    elif alkohol == 4 :
+    elif alkohol == 'Berat' :
+        ahh = ahh - 8
+    elif alkohol == 'Tidak Pernah' :
         ahh = ahh
     return ahh
 
 def kategori_pengguna_obat_terlarang (obat_terlarang, ahh) :
-    if obat_terlarang == 1 :
+    if obat_terlarang == 'Ringan' :
         ahh = ahh - 5
-    elif obat_terlarang == 2 :
-        ahh = ahh - 20
-    elif obat_terlarang == 3 :
+    elif obat_terlarang == 'Berat' :
+        ahh = ahh - 10
+    elif obat_terlarang == 'Tidak Pernah' :
         ahh = ahh 
     return ahh
